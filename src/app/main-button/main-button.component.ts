@@ -13,7 +13,7 @@ export class MainButtonComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  mainPage(){
+  mainPage() {
     this.router.navigate(['/list']);
   }
 
