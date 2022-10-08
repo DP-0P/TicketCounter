@@ -22,4 +22,8 @@ export class ListComponent implements OnInit {
     })
   }
 
+  bookTicket(id:number,ticketsAvailable:number){
+    this.service.updateTicketDetails(id,ticketsAvailable)
+  }
+
 }
