@@ -8,13 +8,15 @@ import { ListComponent } from './list/list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MainButtonComponent } from './main-button/main-button.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     NavbarComponent,
-    MainButtonComponent
+    MainButtonComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

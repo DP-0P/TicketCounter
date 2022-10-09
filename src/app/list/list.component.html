@@ -6,6 +6,18 @@
         <th>Avail</th>
         <th>Button</th>
     </tr>
+
+    <!--
+
+        <tr *ngFor="let movie of moviesData">
+            <td>{{movie.id}}</td>
+            <td>{{movie.name}}</td>
+            <td>{{movie.cast}}</td>
+            <td>{{movie.ticketsAvailable}}</td>
+            <td><button id="" (click)="bookTicket(movie.id,movie.ticketsAvailable)">BOOK</button></td>
+        </tr>
+    -->
+
     <tr *ngFor="let movie of moviesData">
         <td>{{movie.id}}</td>
         <td>{{movie.name}}</td>
@@ -13,4 +25,7 @@
         <td>{{movie.ticketsAvailable}}</td>
         <td><button id="" (click)="bookTicket(movie.id,movie.ticketsAvailable)">BOOK</button></td>
     </tr>
+
 </table>
+
+<button (click)="test()">test</button>
