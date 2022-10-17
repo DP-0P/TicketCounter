@@ -1,31 +1,49 @@
-<table>
-    <tr>
-        <th>ID</th>
-        <th>NAME</th>
-        <th>CAST</th>
-        <th>Avail</th>
-        <th>Button</th>
-    </tr>
+<div class="stream">
+    NOW STREAMING
+</div>
 
-    <!--
+<div class="container">
 
-        <tr *ngFor="let movie of moviesData">
-            <td>{{movie.id}}</td>
-            <td>{{movie.name}}</td>
-            <td>{{movie.cast}}</td>
-            <td>{{movie.ticketsAvailable}}</td>
-            <td><button id="" (click)="bookTicket(movie.id,movie.ticketsAvailable)">BOOK</button></td>
-        </tr>
-    -->
 
-    <tr *ngFor="let movie of moviesData">
-        <td>{{movie.id}}</td>
-        <td>{{movie.name}}</td>
-        <td>{{movie.cast}}</td>
-        <td>{{movie.ticketsAvailable}}</td>
-        <td><button id="" (click)="bookTicket(movie.id,movie.ticketsAvailable)">BOOK</button></td>
-    </tr>
+    <div class="movie-card" *ngFor="let movie of moviesData">
+        <div class="movie-header" style="background:url({{movie.poster}}); background-size: cover;">
 
-</table>
+        </div>
+        <!--movie-header-->
+        <div class="movie-content">
+            <div class="movie-content-header">
+                <i>
+                    <a (click)="bookTicket(movie)">
+                        <h3 class="movie-title">{{movie.name}}</h3>
+                    </a>
+                </i>
+                <div class="imax-logo"></div>
+            </div>
+            <div class="movie-info">
+                <div class="info-section">
+                    <label>Cast</label>
+                    <span>{{movie.cast}}</span>
+                </div>
+                <!--date,time-->
+                <div class="info-section">
+                    <label>Director</label>
+                    <span>{{movie.director}}</span>
+                </div>
+                <!--screen-->
+                <div class="info-section">
+                    <label>Price</label>
+                    <span>₹{{movie.price}}</span>
+                </div>
+                <!--row-->
+                <!-- <div class="info-section">
+                        <label>Seat</label>
+                        <span>21,22</span>
+                    </div> -->
+            </div>
+        </div>
+        <!--movie-content-->
+    </div>
+    <!--movie-card-->
 
-<button (click)="test()">test</button>
+</div>
+<!--container-->

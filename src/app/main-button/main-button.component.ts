@@ -17,4 +17,8 @@ export class MainButtonComponent implements OnInit {
     this.router.navigate(['/list']);
   }
 
+  tableTest(){
+    this.router.navigate(['detailTable'])
+  }
+
 }

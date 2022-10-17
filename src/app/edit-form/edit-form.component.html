@@ -1,0 +1,36 @@
+<div class="container">  
+    <form id="contact" action="" [formGroup]="myForm" (ngSubmit)="submit(myForm,serviceData.movieID)">
+      <h3>{{serviceData.name}}</h3>
+      <h4 id="lol">{{serviceData.movieID}}</h4>
+      <fieldset>
+        <input id="userName" placeholder="Your name" type="text" formControlName="userName" tabindex="1" required autofocus>
+      </fieldset>
+      <fieldset>
+        <input placeholder="email" type="text" formControlName="email" tabindex="4" required>
+      </fieldset>
+      <fieldset>
+        <input id="Name" placeholder="Phone" formControlName="phone" type="text" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Number of tickets" formControlName="tickets" type="text" tabindex="4" required>
+      </fieldset>
+
+      <fieldset type="select">
+        <select formControlName="select" tabindex="5">
+          <option value="Morning">Morning</option>
+          <option value="Noon">Noon</option>
+          <option value="Evening">Evening</option>
+          <option value="Night">Night</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <input formControlName="date" type="date" tabindex="4" required>
+      </fieldset>
+      
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      </fieldset>
+      </form>
+  </div>
+

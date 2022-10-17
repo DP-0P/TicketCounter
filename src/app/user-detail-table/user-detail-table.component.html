@@ -1,0 +1,45 @@
+<div>
+
+  <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="movieName">
+      <th mat-header-cell *matHeaderCellDef> Movie Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.movieName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="show">
+      <th mat-header-cell *matHeaderCellDef> Show </th>
+      <td mat-cell *matCellDef="let element"> {{element.timing}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="num">
+      <th mat-header-cell *matHeaderCellDef> Number of Tickets </th>
+      <td mat-cell *matCellDef="let element"> {{element.numberOfTickets}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef> Edit </th>
+      <td mat-cell *matCellDef="let element"><button (click)="editUser(element.id)">Edit</button></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+
+  </table>
+  <mat-paginator #paginator [pageSize]="7" [pageSizeOptions]="[2,5,10,25,100]">
+  </mat-paginator>
+
+
+
+</div>

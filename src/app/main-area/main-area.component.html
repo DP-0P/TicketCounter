@@ -1,0 +1,25 @@
+<div class="movie_card" id="bright">
+    <div class="info_section">
+      <div class="movie_header">
+        <img class="locandina" src={{serviceData.poster}}/>
+        <h1>{{serviceData.name}}</h1>
+        <h4>{{serviceData.releaseDate}}, {{serviceData.director}}</h4>
+        <span class="minutes">{{serviceData.duration}}</span>
+        <p class="type">{{serviceData.genre}}</p>
+      </div>
+      <div class="movie_desc">
+        <p class="text">
+          {{serviceData.desc}}
+        </p>
+      </div>
+      <div class="movie_social">
+        <ul>
+          <li><i><a (click)="bookingForm(serviceData.id)">Book tickets</a></i></li>
+          <li><i><a (click)="trailer(serviceData.trailer)">Watch Trailer</a></i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="blur_back" style="background: url({{serviceData.poster}});">
+        <!-- <img class = 'cover' src={{serviceData.poster}} alt=""> -->
+    </div>
+  </div>

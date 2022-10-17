@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../services/movies.service';
-import { movieData,movie } from '../utilities/movieData';
+import { movieData } from '../utilities/movieData';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -8,58 +9,42 @@ import { movieData,movie } from '../utilities/movieData';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  // moviesData: movieData[] = []
-  
-  // md:[] = movieData
-  
-  // arr: String[] = movieData
+  moviesData: any
 
-  moviesData: movieData[] = movie
 
-  
-  constructor(private service: MovieService) { 
-    
-    // let arr = movieData
-  }
-  
+  constructor(private service: MovieService, private router: Router) { }
+
   ngOnInit(): void {
-    // this.getMoviesDetails()
-    
+    this.getMoviesDetails()
   }
-  
-  test(){
-    
+
+  test(moive: movieData) {
+
     // console.log(movieData[0].name)
+    this.service.putData(moive)
+    this.router.navigate(['bookingForm']);
   }
 
-  bookTicket(id:number,ticketsAvailable:number){
-    console.log(id,ticketsAvailable)
-    console.log(this.moviesData[1].ticketsAvailable = ticketsAvailable-2)
-    console.log(this.moviesData[1])
-  }
+  // bookTicket(id:number,ticketsAvailable:number){
+  //   console.log(id,ticketsAvailable)
+  //   console.log(this.moviesData[1].ticketsAvailable = ticketsAvailable-2)
+  //   console.log(this.moviesData[1])
+  // }
 
-  
-  /*
-  getMoviesDetails(){
-    this.service.getMovieDetails().subscribe((data:movieData[])=>{
+  getMoviesDetails() {
+    this.service.getMovieDetails().subscribe((data: movieData[]) => {
       this.moviesData = data
     })
   }
-  */
 
-  /*
-  bookTicket(id:number,ticketsAvailable:number){
+  bookTicket(movie: movieData) {
 
     // this.service.updateTicketDetails(id,ticketsAvailable)
-
-    this.service.updateTicketDetails(id,ticketsAvailable)
-
-    setTimeout(()=>{
-      this.getMoviesDetails()
-      console.log('chk chk')
-    },4000)
     
+    this.router.navigate(['booking/'+movie.id]);
+    // this.service.updateTicketDetails(movie).subscribe(Response => { this.moviesData = Response })
+    // this.service.putData(movie)
   }
-  */
+
 
 }
